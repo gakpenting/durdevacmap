@@ -1,0 +1,80 @@
+<mat-toolbar color="primary" >
+    
+    <span ><button (click)="back()" mat-button aria-label="Example icon-button with a heart icon">
+        <mat-icon>keyboard_backspace</mat-icon>
+      </button></span>
+
+    <!-- This fills the remaining space of the current row -->
+    <span style="flex: 1 1 auto;">Detail</span>
+  
+    <span >  <button (click)="toggleMenu()" mat-button aria-label="Example icon-button with a heart icon">
+        <mat-icon>dehaze</mat-icon>
+      </button></span>
+
+
+</mat-toolbar>
+<mat-list role="list">
+    <mat-list-item role="listitem" style="margin-top:10px;"
+      >
+      <div >
+          <div style="font-weight:bold;">Title</div>
+          <div style="margin-top:8px;">{{detai.title}}</div>
+      </div>
+      </mat-list-item>
+      <mat-list-item role="listitem" style="margin-top:10px;"
+      >
+      <div >
+          <div style="font-weight:bold;">Description</div>
+          <div style="margin-top:8px;">{{detai.description}}</div>
+      </div>
+      </mat-list-item>
+      <mat-list-item role="listitem" style="margin-top:10px;"
+      >
+      <div >
+          <div style="font-weight:bold;">Uploaded File</div>
+          
+          
+      </div>
+      </mat-list-item>
+
+      <mat-list-item *ngFor="let uplo of detai.upload;">
+          <div
+            style="display: flex !important;
+          align-items: center;
+          justify-content: space-between !important;width:100%;"
+          >
+            <div>{{uplo.name}}</div>
+            <div>
+              <button
+                style="float:right;"
+                mat-raised-button
+                color="accent"
+                (click)="downloadFile(uplo.src,uplo.name)"
+              >
+                Download
+              </button>
+            </div>
+          </div>
+        </mat-list-item>
+      <mat-list-item>
+        <div style="display:flex;justify-content: space-between;width:100%;">
+          <button
+          style="margin-top:10px;"
+          mat-raised-button
+          color="warn"
+          (click)="remove()"
+        >
+          REMOVE
+        </button>
+        <button
+            style="margin-top:10px;"
+            mat-raised-button
+            color="green"
+            (click)="edit(detai.id)"
+          >
+            EDIT
+          </button>
+        </div>
+          
+      </mat-list-item>
+  </mat-list>

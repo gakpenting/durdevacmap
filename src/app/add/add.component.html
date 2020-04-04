@@ -1,0 +1,93 @@
+<mat-toolbar color="primary" >
+    
+    <span ><button (click)="back()" mat-button aria-label="Example icon-button with a heart icon">
+        <mat-icon>keyboard_backspace</mat-icon>
+      </button></span>
+
+    <!-- This fills the remaining space of the current row -->
+    <span style="flex: 1 1 auto;">Add Location</span>
+  
+    <span >  <button (click)="toggleMenu()" mat-button aria-label="Example icon-button with a heart icon">
+        <mat-icon>dehaze</mat-icon>
+      </button></span>
+
+
+</mat-toolbar>
+<mat-list role="list">
+    <mat-list-item role="listitem" style="margin-top:20px;"
+      >
+      <div >
+          <div style="font-weight:bold;">Title</div>
+          
+      </div>
+      </mat-list-item>
+      <mat-list-item>
+        <div style="margin-top:8px;"><mat-form-field appearance="fill">
+            <mat-label>Input</mat-label>
+            <input matInput [(ngModel)]="laye.title">
+          </mat-form-field></div>
+      </mat-list-item>
+      <mat-list-item role="listitem" style="margin-top:10px;"
+      >
+      <div >
+          <div style="font-weight:bold;">Description</div>
+          
+      </div>
+      </mat-list-item>
+      <mat-list-item>
+        <div style="margin-top:30px;"> <mat-form-field appearance="fill">
+            <mat-label>Textarea</mat-label>
+            <textarea matInput [(ngModel)]="laye.description"></textarea>
+          </mat-form-field></div>
+      </mat-list-item>
+      <mat-list-item role="listitem" style="margin-top:10px;"
+      >
+      <div >
+          <div style="font-weight:bold;">Upload File</div>
+          
+          
+      </div>
+      </mat-list-item>
+<mat-list-item style="display:flex;justify-content: center;"><button mat-raised-button color="primary">UPLOAD FILE</button></mat-list-item>
+      <mat-list-item >
+          <div
+            style="display: flex !important;
+          align-items: center;
+          justify-content: space-between !important;width:100%;"
+          *ngFor="let uploa in laye.upload;let indexOfE=index;"
+          >
+            <div>a</div>
+            <div>
+              <button
+                style="float:right;"
+                mat-raised-button
+                color="warn"
+                (click)="removeUpload(indexOfE)"
+              >
+                Delete
+              </button>
+            </div>
+          </div>
+        </mat-list-item>
+      <mat-list-item>
+        <div style="display:flex;justify-content: space-between;width:100%;">
+          <button
+          style="margin-top:10px;"
+          mat-raised-button
+          color="warn"
+          (click)="remove()"
+        >
+          REMOVE
+        </button>
+        <button
+            style="margin-top:10px;"
+            mat-raised-button
+            color="green"
+            (click)="add()"
+          >
+            ADD
+          </button>
+        </div>
+          
+      </mat-list-item>
+  </mat-list>

@@ -1,0 +1,37 @@
+<mat-toolbar color="primary" >
+    
+    <span ><button (click)="setDefault()" mat-button aria-label="Example icon-button with a heart icon">
+        <mat-icon>home</mat-icon>
+      </button></span>
+  
+        <!-- This fills the remaining space of the current row -->
+        <span style="flex: 1 1 auto;">Location List</span>
+      
+        <span >  <button (click)="toggleMenu()" mat-button aria-label="Example icon-button with a heart icon">
+            <mat-icon>dehaze</mat-icon>
+          </button></span>
+    
+    
+  </mat-toolbar>
+  
+<mat-list>
+    <mat-list-item *ngFor="let layer of layers;let indexOfElement=index;">
+      <div
+        style="display: flex !important;
+      align-items: center;
+      justify-content: space-between !important;width:100%;"
+      >
+        <div>{{ layer.title }}</div>
+        <div>
+          <button
+            style="z-index:500;float:right;"
+            mat-raised-button
+            color="primary"
+            (click)="focusLayer(layer,indexOfElement)"
+          >
+            Show me on map
+          </button>
+        </div>
+      </div>
+    </mat-list-item>
+  </mat-list>
