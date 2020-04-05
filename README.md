@@ -33,7 +33,7 @@ after you click a location on the map you will be asked if you want to add the l
 
 ![Task 1](readme-src/7.png)
 
-there will be a sidebar on the right side of your screen if you click "yes" add some information on it and click "add" button on the bottom right side of your screen you and click "yes"
+there will be a sidebar on the right side of your screen add some information on it and click "add" button on the bottom right side of your screen you and click "yes"
 
 ![Task 1](readme-src/8.png)
 
@@ -41,7 +41,7 @@ and then you will see your location added on the right side click "show me on ma
 
 ![Task 1](readme-src/9.png)
 
-when you click "show me on map" you will see your pin also the detail on the right side you can also download your file and edit the description right now lets edit the description by clicking "edit"
+when you click "show me on map" you will see your pin also the detail on the right side, you can also download your file and edit the description right now lets edit the description by clicking "edit"
 
 ![Task 1](readme-src/10.png)
 
@@ -51,7 +51,7 @@ here i change the name to "some town name" and then click edit after you finish 
 
 ![Task 1](readme-src/12.png)
 
-after that you will see your detail name change on screen
+after that you will see your detail name change on screen for creating polygon and line and the step is the same
 
 ## Task 3
 
