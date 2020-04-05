@@ -23,35 +23,35 @@ Click here [https://durdevacmap.now.sh/](https://durdevacmap.now.sh/)
 
 ![Task 1](readme-src/4.png)
 
-First of all click the pin icon on the top left side of your screen, in the image you see text "no. 1" after that you can see your pointer change into a pin just like you see in the image in the middle with the text "no. 2"
+First of all click the pin icon on the top left side of your screen, in the image above you see text "no. 1", and then after that you can see your pointer change into a pin just like you see on the image in the middle with the text "no. 2"
 
 ![Task 1](readme-src/5.png)
 
-after you click a location on the map you will be asked if you want to add the location or not if you click "yes" the location will be add if you click "no" the location will be removed for now lets click "yes"
+after you click a location on the map, you will be asked if you want to add the location or not, if you click "yes" the location will be added, if you click "no" the location will be removed, for now lets click "yes"
 
 ![Task 1](readme-src/6.png)
 
 ![Task 1](readme-src/7.png)
 
-there will be a sidebar on the right side of your screen add some information on it and click "add" button on the bottom right side of your screen, and click "yes"
+there will be a sidebar on the right side of your screen and you can add some information on it, to finish, click "add" button on the bottom right side of your screen, and click "yes"
 
 ![Task 1](readme-src/8.png)
 
-and then you will see your location added on the right side click "show me on map"
+and then you will see your location added, on the right side click "show me on map"
 
 ![Task 1](readme-src/9.png)
 
-when you click "show me on map" you will see your pin also the detail on the right side, you can also download your file and edit the description right now lets edit the description by clicking "edit"
+when you click "show me on map" you will see your pin also the detail on the right side, you can also download your file, and edit the description, right now lets edit the description by clicking "edit"
 
 ![Task 1](readme-src/10.png)
 
 ![Task 1](readme-src/11.png)
 
-here i change the name to "some town name" and then click edit after you finish and click "yes"
+here i change the name to "some town name", and then click edit after you finish and click "yes"
 
 ![Task 1](readme-src/12.png)
 
-after that you will see your detail name change on screen for creating polygon and line and the step is the same
+after that you will see your detail name change on screen, for creating polygon and line and the step is the same
 
 ## Task 3
 
