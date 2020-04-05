@@ -3,7 +3,7 @@
 
 ## See it Live
 
-Click here [https://durdevacmap.now.sh/](https://durdevacmap.now.sh/)
+Click here [https://durdevacmap.spiritbro.now.sh/](https://durdevacmap.spiritbro.now.sh/)
 
 ## Task 1
 
