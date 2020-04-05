@@ -125,7 +125,7 @@ export class AppComponent implements AfterViewInit {
       zoom: 3,
     });
 
-    this.http.get('assets/file.geojson').subscribe((json: any) => {
+    this.http.get('assets/durdevac.geojson').subscribe((json: any) => {
       let y: any = localStorage.getItem('data');
       if (y) {
         y = JSON.parse(y);
@@ -156,14 +156,19 @@ export class AppComponent implements AfterViewInit {
           }
         });
       }
-      const k = json.features.filter(
-        (a: any) => a.properties.name === 'Grad Đurđevac'
-      );
-      const l = json.features.filter(
-        (a: any) => a.properties.name === 'Đurđevac'
-      );
-
-      var coordinates = k[0].geometry.coordinates[0];
+      // const k = json.features.filter(
+      //   (a: any) => a.properties.name === 'Grad Đurđevac'
+      // );
+//       const k = json.features.filter(
+//         (a: any) => a.properties.name === 'Grad Đurđevac'
+//       );
+//       //79448157
+//       const l = json.features.filter(
+//         (a: any) => a.properties.name === 'Đurđevac'
+//       );
+// console.log(k)
+      // var coordinates = k[0].geometry.coordinates[0];
+      var coordinates = json.geometries[0].coordinates[0][0];
       var latLngs = [];
       for (let i = 0; i < coordinates.length; i++) {
         latLngs.push(new L.LatLng(coordinates[i][1], coordinates[i][0]));
@@ -172,7 +177,7 @@ export class AppComponent implements AfterViewInit {
       L.mask(latLngs).addTo(this.map);
 
       const feature = L.geoJSON(
-        { type: 'FeatureCollection', features: k.splice(0, 1).concat(l[2]) },
+        json,
         {
           style: {
             fill: true,
@@ -181,10 +186,7 @@ export class AppComponent implements AfterViewInit {
             color: 'blue', //Outline color
             fillOpacity: 0,
           },
-          onEachFeature: function (feature, layer) {
-            // ini.layers.push({feature,layer})
-            layer.bindPopup(feature.properties.name);
-          },
+        
         }
       ).addTo(this.map);
       this.home = feature;
