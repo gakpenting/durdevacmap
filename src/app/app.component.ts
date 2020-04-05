@@ -59,23 +59,32 @@ export class AppComponent implements AfterViewInit {
         JSON.stringify(y, this.getCircularReplacer())
       );
     }
-    this.map.fitBounds(this.home.getBounds())
+    this.map.fitBounds(this.home.getBounds());
   }
-  changeDetail(value:number):void{
-    this.laye=this.layers[value]
+  changeDetail(value: number): void {
+    this.laye = this.layers[value];
   }
   changeLaye(value: any): void {
+    let ini=this
     this.layers[value.id] = value;
-    this.layers[value.id].layer.bindPopup(value.title)
-    this.layers[value.id].layer.on("click",(e:any)=>{
-console.log(e)
-    })
-    
+    this.layers[value.id].layer.bindPopup(value.title);
+    this.layers[value.id].layer.on('click', (e: any) => {
+      ini.dimana = 'detail';
+      ini.menuStatus = true;
+      ini.changeDetail(value.id);
+      if (value.type !== 'marker') {
+        ini.map.fitBounds(value.layer.getBounds());
+      } else {
+        const j = L.latLngBounds([value.layer.getLatLng()]);
+        ini.map.fitBounds(j);
+      }
+    });
+
     let y: any = localStorage.getItem('data');
     if (y) {
       y = JSON.parse(y);
       y[value.id] = value;
-      console.log(value)
+      console.log(value);
       localStorage.setItem(
         'data',
         JSON.stringify(y, this.getCircularReplacer())
@@ -117,37 +126,36 @@ console.log(e)
     });
 
     this.http.get('assets/file.geojson').subscribe((json: any) => {
-      let y:any = localStorage.getItem('data');
+      let y: any = localStorage.getItem('data');
       if (y) {
         y = JSON.parse(y);
-        y.forEach((a:any,indexY:number)=>{
-if(a.type!=="marker"){
-  let b=L[a.type](a.layer._latlngs).addTo(this.map)
-  b.bindPopup(a.title)
-  b.on("click",(e:any)=>{
-    this.dimana="detail"
-    this.menuStatus=true
-    this.changeDetail(indexY)
-    this.map.fitBounds(b.getBounds());
-    
-        })
-  a.layer=b
-  this.layers.push(a)
-}else{
-  let b=L[a.type](a.layer._latlng).addTo(this.map)
-  b.bindPopup(a.title)
-  b.on("click",(e:any)=>{
-    this.dimana="detail"
-    this.menuStatus=true
-    this.changeDetail(indexY)
-    const j=L.latLngBounds([b.getLatLng()]);
-    this.map.fitBounds(j);
-        })
-  a.layer=b
-  this.layers.push(a)
-}
-        })
-      } 
+        y.forEach((a: any, indexY: number) => {
+          if (a.type !== 'marker') {
+            let b = L[a.type](a.layer._latlngs).addTo(this.map);
+            b.bindPopup(a.title);
+            b.on('click', (e: any) => {
+              this.dimana = 'detail';
+              this.menuStatus = true;
+              this.changeDetail(indexY);
+              this.map.fitBounds(b.getBounds());
+            });
+            a.layer = b;
+            this.layers.push(a);
+          } else {
+            let b = L[a.type](a.layer._latlng).addTo(this.map);
+            b.bindPopup(a.title);
+            b.on('click', (e: any) => {
+              this.dimana = 'detail';
+              this.menuStatus = true;
+              this.changeDetail(indexY);
+              const j = L.latLngBounds([b.getLatLng()]);
+              this.map.fitBounds(j);
+            });
+            a.layer = b;
+            this.layers.push(a);
+          }
+        });
+      }
       const k = json.features.filter(
         (a: any) => a.properties.name === 'Grad Đurđevac'
       );
@@ -179,7 +187,7 @@ if(a.type!=="marker"){
           },
         }
       ).addTo(this.map);
-this.home=feature
+      this.home = feature;
       this.map.fitBounds(feature.getBounds());
       // this.map.fitBounds(bounds);
     });
@@ -245,7 +253,7 @@ this.home=feature
     const ini = this;
     this.map.on('draw:created', async function (e) {
       // console.log(e);
-      
+
       editableLayers.addLayer(e.layer);
       const result = await ini.openDialog();
       if (result) {
@@ -259,8 +267,20 @@ this.home=feature
           layer: e.layer,
           type: e.layerType,
         });
+        e.layer.bindPopup('');
+        e.layer.on('click', (z: any) => {
+          ini.dimana = 'detail';
+          ini.menuStatus = true;
+          ini.changeDetail(ini.layers.length - 1);
+          if (e.layerType !== 'marker') {
+            ini.map.fitBounds(e.layer.getBounds());
+          } else {
+            const j = L.latLngBounds([e.layer.getLatLng()]);
+            ini.map.fitBounds(j);
+          }
+        });
         ini.laye = {
-          id: ini.layers.length-1,
+          id: ini.layers.length - 1,
           title: '',
           description: '',
           upload: [],
@@ -271,7 +291,7 @@ this.home=feature
         if (y) {
           y = JSON.parse(y);
           y.push({
-            id: ini.layers.length-1,
+            id: ini.layers.length - 1,
             title: '',
             description: '',
             upload: [],

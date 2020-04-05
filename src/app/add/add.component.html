@@ -48,15 +48,22 @@
           
       </div>
       </mat-list-item>
-<mat-list-item style="display:flex;justify-content: center;"><button mat-raised-button color="primary">UPLOAD FILE</button></mat-list-item>
+<mat-list-item style="display:flex;justify-content: center;">
+  <input
+  (change)="fileChanged($event)"
+  type="file"
+  #myFile
+  style="display: none;"
+/>
+  <button  mat-raised-button color="primary" (click)="uploads()">UPLOAD FILE</button></mat-list-item>
       <mat-list-item >
           <div
             style="display: flex !important;
           align-items: center;
           justify-content: space-between !important;width:100%;"
-          *ngFor="let uploa in laye.upload;let indexOfE=index;"
+          *ngFor="let uploa of laye.upload;let indexOfE=index;"
           >
-            <div>a</div>
+            <div><a href="#" (click)="downloadFile(uploa.src,uploa.name)">{{uploa.name}}</a></div>
             <div>
               <button
                 style="float:right;"
