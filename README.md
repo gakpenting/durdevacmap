@@ -1,6 +1,5 @@
-# By Freelancer Febriano for Demo task.pdf 
 # Đurđevac map
-
+[![donatepaypal](https://img.shields.io/badge/PAYPAL-DONATE-brightgreen?style=for-the-badge&logo=paypal)](https://paypal.me/rinoakbr)
 ## See it Live
 
 Click here [https://durdevacmap.spiritbro.now.sh/](https://durdevacmap.spiritbro.now.sh/)
