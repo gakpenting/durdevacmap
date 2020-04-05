@@ -33,7 +33,7 @@ after you click a location on the map you will be asked if you want to add the l
 
 ![Task 1](readme-src/7.png)
 
-there will be a sidebar on the right side of your screen add some information on it and click "add" button on the bottom right side of your screen you and click "yes"
+there will be a sidebar on the right side of your screen add some information on it and click "add" button on the bottom right side of your screen, and click "yes"
 
 ![Task 1](readme-src/8.png)
 
