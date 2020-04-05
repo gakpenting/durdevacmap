@@ -51,7 +51,7 @@ here i change the name to "some town name", and then click edit after you finish
 
 ![Task 1](readme-src/12.png)
 
-after that you will see your detail name change on screen, for creating polygon and line and the step is the same
+after that you will see your detail name change on screen, for creating polygon and line the step is the same as the above
 
 ## Task 3
 
