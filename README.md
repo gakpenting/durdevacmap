@@ -1,8 +1,20 @@
 # Đurđevac map
-[![donatepaypal](https://img.shields.io/badge/PAYPAL-DONATE-brightgreen?style=for-the-badge&logo=paypal)](https://paypal.me/rinoakbr)
+<!-- [![donatepaypal](https://img.shields.io/badge/PAYPAL-DONATE-brightgreen?style=for-the-badge&logo=paypal)](https://paypal.me/rinoakbr) -->
 ## See it Live
 
 Click here [https://durdevacmap.spiritbro.now.sh/](https://durdevacmap.spiritbro.now.sh/)
+
+## Small Task 
+
+![Task 1](readme-src/17.png)
+
+## Result Small Task
+
+![Task 1](readme-src/18.png)
+
+![Task 1](readme-src/18.png)
+
+here is the DWG file you gave me earlier put on top of durdevac map i convert it first to svg then overlay it on top of durdevac map, as you can see the first image is the image of original map before zoom in and then after zoom in you can see the kranoyarsk DWG file overlayed on top of the durdevac map
 
 ## Task 1
 

@@ -189,6 +189,9 @@ export class AppComponent implements AfterViewInit {
         
         }
       ).addTo(this.map);
+      var imageUrl = 'assets/krasnoyarsk.svg',
+    imageBounds = feature.getBounds();
+L.imageOverlay(imageUrl, imageBounds).addTo(this.map);
       this.home = feature;
       this.map.fitBounds(feature.getBounds());
       // this.map.fitBounds(bounds);
