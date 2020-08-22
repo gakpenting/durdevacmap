@@ -25,7 +25,7 @@
     "downloadjs": "^1.4.7",
     "leaflet": "^1.6.0",
     "leaflet-draw": "^1.0.4",
-    "rxjs": "~6.6.0",
+    "rxjs": "~6.6.2",
     "tslib": "^1.13.0",
     "zone.js": "~0.10.2"
   },
