@@ -23,7 +23,7 @@
     "@angular/platform-browser-dynamic": "~9.1.12",
     "@angular/router": "~9.1.12",
     "downloadjs": "^1.4.7",
-    "leaflet": "^1.7.1",
+    "leaflet": "^1.8.0",
     "leaflet-draw": "^1.0.4",
     "rxjs": "~6.6.2",
     "tslib": "^1.13.0",
